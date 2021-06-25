@@ -62,22 +62,4 @@ class SinglyLinkedList {
     }
     System.out.println();
   }
-
-  public static void main(String[] args){
-    SinglyLinkedList sll = new SinglyLinkedList();
-    sll.print();
-    sll.appendToTail(10);
-    sll.print();
-    sll.appendToTail(20);
-    sll.print();
-    sll.delete(10);
-    sll.print();
-    sll.appendToHead(10);
-    sll.print();
-    sll.appendToHead(0);
-    sll.print();
-    sll.appendToTail(30);
-    sll.print();
-  }
-
 }
