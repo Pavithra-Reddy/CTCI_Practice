@@ -13,8 +13,9 @@ class RemoveDups extends SinglyLinkedList{
     }
     System.out.println("Before : ");
     sll.print();
-    removeDuplicatesWithHashSet(sll.head);
+    //removeDuplicatesWithHashSet(sll.head);
     System.out.println("After : ");
+    removeDuplicatesWithoutBuffer(sll.head);
     sll.print();
   }
   public static void removeDuplicatesWithHashSet(Node head){
@@ -32,6 +33,30 @@ class RemoveDups extends SinglyLinkedList{
       else{
         hs.add(n.next.data);
         n = n.next;
+      }
+    }
+  }
+
+  public static void removeDuplicatesWithoutBuffer(Node head){
+    Node n = head;
+    if(n == null){
+      System.out.println("List is Empty");
+      return;
+    }
+    while(n != null){
+      removeNode(n);
+      n = n.next;
+    }
+  }
+
+  private static void removeNode(Node newHead){
+    int data = newHead.data;
+    while(newHead.next != null){
+      if(newHead.next.data == data){
+        newHead.next = newHead.next.next;
+      }
+      else{
+        newHead = newHead.next;
       }
     }
   }
