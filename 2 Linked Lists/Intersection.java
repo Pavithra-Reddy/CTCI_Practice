@@ -21,7 +21,7 @@ class Intersection extends SinglyLinkedList{
       sll2.appendToTail(sc.nextInt());
     }
 
-    System.out.println("Enter intersection point");
+    System.out.println("Enter intersection point(0 based)");
     t = sc.nextInt();
 
     Node ln = sll2.head;
