@@ -47,5 +47,71 @@ class Intersection extends SinglyLinkedList{
     sll1.print();
     System.out.println("Second List");
     sll2.print();
+
+
+    Node intersectedNode = findIntersection(sll1.head, sll2.head);
+    if(intersectedNode == null){
+      System.out.println("No Intersection");
+      return;
+    }
+    System.out.println("Intersected at " + intersectedNode.data);
+
+    //No intersection case
+    System.out.println("Enter List size and elements for without intersection scenario");
+    t = sc.nextInt();
+    SinglyLinkedList sll3 = new SinglyLinkedList();
+    while(t-- > 0){
+      sll3.appendToTail(sc.nextInt());
+    }
+
+    intersectedNode = findIntersection(sll1.head, sll3.head);
+    if(intersectedNode == null){
+      System.out.println("No Intersection");
+      return;
+    }
+    System.out.println("Intersected at " + intersectedNode.data);
+
   }
+
+  private static Node findIntersection(Node head1, Node head2){
+    int len1 = 0;
+    int len2 = 0;
+    Node n1 = head1;
+    Node n2 = head2;
+
+    while(n1 != null){
+      n1 = n1.next;
+      len1++;
+    }
+
+    while(n2 != null){
+      n2 = n2.next;
+      len2++;
+    }
+
+    n1 = head1;
+    n2 = head2;
+
+    if(len1 < len2){
+      int k = len2 - len1;
+      while(k-- > 0){
+        n2 = n2.next;
+      }
+    }
+    else{
+      int k = len1 - len2;
+      while(k-- > 0){
+        n1 = n1.next;
+      }
+    }
+
+    while(n1 != n2){
+      n1 = n1.next;
+      n2 = n2.next;
+    }
+
+    return n1;
+  }
+
+
 }
