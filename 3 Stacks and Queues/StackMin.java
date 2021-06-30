@@ -6,7 +6,6 @@ class StackMin extends Stack{
   public static void main(String args[]){
       Scanner sc = new Scanner(System.in);
       System.out.println("Menu\n1. Push\n2. Pop\n3. Print Stack\n4. Get Minimum Element\n5. End");
-      outer:
       while(true){
         try{
           System.out.println("Enter option : ");
@@ -21,7 +20,7 @@ class StackMin extends Stack{
                     break;
             case 4: System.out.println("Min element: " + minSt.peek());
                     break;
-            case 5: break outer;
+            case 5: return;
             default: break;
           }
         }
@@ -29,7 +28,6 @@ class StackMin extends Stack{
           System.out.println("Stack is empty");
         }
       }
-      lbl: return;
   }
 
   private static void push(int data){
