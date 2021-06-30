@@ -41,6 +41,20 @@ class Stack<T>{
   boolean isEmpty(){
     return top == null;
   }
+
+  void print(){
+    StackNode<T> node = top;
+    if(node == null){
+      System.out.println("Stack is empty");
+    }
+    else{
+      while(node != null){
+        System.out.print(node.data + " ");
+        node = node.next;
+      }
+      System.out.println();
+    }
+  }
 }
 
 class EmptyStackException extends Exception{
