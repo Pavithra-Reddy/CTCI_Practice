@@ -6,7 +6,6 @@ class SetOfStacks extends Stack{
 
   private static ArrayList<Stack<Integer>> stList = new ArrayList<Stack<Integer>>();
   private static int max = 0;
-  private static int currStLen = 0;
   public static void main(String args[]){
       Scanner sc = new Scanner(System.in);
       System.out.println("Enter Max height of stack");
@@ -35,30 +34,25 @@ class SetOfStacks extends Stack{
 
   private static int popFromSet() throws EmptyStackException{
     if(stList.isEmpty()){
-      currStLen = 0;
       throw new EmptyStackException();
     }
     Stack<Integer> st = stList.get(stList.size()-1);
     int data = st.pop();
     //System.out.println("**************** ele no." + currStLen + " stack no."+ stList.size());
-    currStLen--;
-    if(currStLen == 0){
+    if(st.getSize() == 0){
       stList.remove(stList.size()-1);
-      currStLen = max;
     }
     return data;
   }
 
   private static void pushToSet(int data) throws EmptyStackException{
       Stack<Integer> st = new Stack<Integer>();
-      if(currStLen == max || currStLen == 0){
-        currStLen = 0;
+      if(stList.isEmpty() || stList.get(stList.size()-1).getSize() == max){
         stList.add(st);
       } else {
         st = stList.get(stList.size()-1);
       }
       st.push(data);
-      currStLen++;
       //System.out.println("################### ele no." + currStLen + " stack no."+ stList.size());
   }
 
