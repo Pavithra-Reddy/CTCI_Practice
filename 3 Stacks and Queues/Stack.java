@@ -3,6 +3,7 @@
 */
 class Stack<T>{
   private StackNode<T> top;
+  private int size;
 
   private static class StackNode<T>{
     private T data;
@@ -16,6 +17,7 @@ class Stack<T>{
     StackNode<T> newNode = new StackNode<T>(data);
     newNode.next = top;
     top = newNode;
+    this.size++;
   }
 
   T pop() throws EmptyStackException{
@@ -26,6 +28,7 @@ class Stack<T>{
     }
     T data = top.data;
     top = top.next;
+    this.size--;
     return data;
   }
 
@@ -54,6 +57,10 @@ class Stack<T>{
       }
       System.out.println();
     }
+  }
+
+  int getSize(){
+    return this.size;
   }
 }
 
