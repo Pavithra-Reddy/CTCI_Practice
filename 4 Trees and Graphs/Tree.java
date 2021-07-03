@@ -59,7 +59,7 @@ public class Tree {
   public void visit(int data){
     System.out.print(data + " ");
   }
-
+  /*
 	public static void main(String args[])
 	{
 		Tree t = new Tree();
@@ -71,5 +71,5 @@ public class Tree {
 		t.preOrder(t.root);
     System.out.print("\nPostOrder Traversal: ");
 		t.postOrder(t.root);
-	}
+	}*/
 }
