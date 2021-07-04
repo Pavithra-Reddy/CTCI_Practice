@@ -3,17 +3,17 @@
 */
 import java.util.*;
 
-class Graph {
-	private Map<Integer, List<Integer>> map = new HashMap<Integer, List<Integer>>(); // Adjacency List
+class Graph<T> {
+	private Map<T, List<T>> map = new HashMap<T, List<T>>(); // Adjacency List
 
 	//adds vertex
-	public void createVertex(Integer v)
+	public void createVertex(T v)
 	{
-		map.put(v, new LinkedList<Integer>());
+		map.put(v, new LinkedList<T>());
 	}
 
 	// adds edge
-	public void createEdge(Integer srcV, Integer destV)
+	public void createEdge(T srcV, T destV)
 	{
 		if (!map.containsKey(srcV)){
       createVertex(srcV);
@@ -29,18 +29,19 @@ class Graph {
   //prints adjacency list
 	public void print()
 	{
-		for (Integer v : map.keySet()) {
+		for (T v : map.keySet()) {
       System.out.print(v + ": ");
-			for (Integer n : map.get(v)) {
+			for (T n : map.get(v)) {
         System.out.print(n + " ");
 			}
 			System.out.print("\n");
 		}
 	}
 
+	/*
   public static void main(String args[])
 	{
-		Graph g = new Graph();
+		Graph<Integer> g = new Graph<Integer>();
 		g.createEdge(0, 1);
     g.createEdge(0, 6);
     g.createEdge(1, 2);
@@ -50,4 +51,5 @@ class Graph {
 		System.out.println("Graph: ");
     g.print();
 	}
+	*/
 }
