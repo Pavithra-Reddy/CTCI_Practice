@@ -38,6 +38,17 @@ class Graph<T> {
 		}
 	}
 
+	public List<T> getAdjacentNodes(T vertex)
+	{
+		if(map.containsKey(vertex)){
+			return map.get(vertex);
+		}
+		else{
+			return new LinkedList<T>();
+		}
+
+	}
+
 	/*
   public static void main(String args[])
 	{
