@@ -15,7 +15,7 @@ class MinimalTree extends Tree{
 		t.postOrder(t.root);
 	}
 
-  private static Node createBinarySearchTree(int[] arr, int begin, int end) {
+  public static Node createBinarySearchTree(int[] arr, int begin, int end) {
     if (begin > end) {
         return null;
     }
