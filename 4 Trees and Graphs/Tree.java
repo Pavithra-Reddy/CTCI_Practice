@@ -8,11 +8,13 @@ public class Tree {
 	static class Node {
 		int data;
 		Node left, right;
+		Node parent;
 		Node(int data)
 		{
 			this.data = data;
 			this.left = null;
 			this.right = null;
+			this.parent = null;
 		}
 	}
 
@@ -25,7 +27,9 @@ public class Tree {
     Node temp = new Node(arr[i]);
     root = temp;
     root.left = createBinaryTree(arr, root.left, 2 * i + 1);
+		root.left.parent = root;
     root.right = createBinaryTree(arr, root.right, 2 * i + 2);
+		root.right.parent = root;
     return root;
 	}
 
