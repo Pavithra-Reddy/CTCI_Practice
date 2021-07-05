@@ -1,5 +1,5 @@
 /*
-* Check Balanced - check if given tree is balanced or not
+* ValidateBST - validates if it is binary search tree or not
 */
 class ValidateBST extends MinimalTree{
   public static void main(String args[])
