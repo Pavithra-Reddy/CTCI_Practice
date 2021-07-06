@@ -49,6 +49,11 @@ class Graph<T> {
 
 	}
 
+	public Map<T, List<T>> getAdjacencyList()
+	{
+		 return map;
+	}
+
 	/*
   public static void main(String args[])
 	{
